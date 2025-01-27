@@ -1,2 +1,4 @@
 com\spring\personalFinance\controller\LoginController.class
 com\spring\personalFinance\controller\RegisterController.class
+com\spring\personalFinance\FinanceManagementApplication.class
+com\spring\personalFinance\models\User.class

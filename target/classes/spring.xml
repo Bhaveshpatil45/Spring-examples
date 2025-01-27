@@ -4,9 +4,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
-    <!-- Configure Spring beans here -->
-    <bean id="userService" class="com.finance.services.UserService" />
-    <bean id="loginController" class="com.finance.controllers.LoginController" />
-    <bean id="registerController" class="com.finance.controllers.RegisterController" />
+    <!-- Bean definitions for services -->
+    <bean id="userService" class="com.spring.personalFinance.services.UserService" />
+    <bean id="transactionService" class="com.spring.personalFinance.services.TransactionService" />
+
+    <!-- Repositories -->
+    <bean id="userRepository" class="com.spring.personalFinance.repositories.UserRepository" />
+    <bean id="transactionRepository" class="com.spring.personalFinance.repositories.TransactionRepository" />
 
 </beans>
