@@ -1,18 +1,37 @@
 package com.spring.personalFinance.services;
 
 import com.spring.personalFinance.models.User;
+import com.spring.personalFinance.repositories.UserRepository;
 
 public class UserService {
 
-    public void createUser(User user) {
-        // Simulate user creation
-        System.out.println("User " + user.getUsername() + " created with balance: " + user.getBalance());
+    private UserRepository userRepository;
+
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
-    public void updateUserBalance(User user, double amount) {
-        // Simulate updating user balance
-        user.setBalance(user.getBalance() + amount);
-        System.out.println("User balance updated. New balance: " + user.getBalance());
+    // Create a new user
+    public void createUser(User user) {
+        userRepository.save(user);
+    }
+
+    // Update a user's balance
+    public boolean updateUserBalance(String username, double amount) {
+        User user = userRepository.findByUsername(username)
+                .orElse(null); // Return null if user not found
+
+        if (user != null) {
+            user.setBalance(user.getBalance() + amount);
+            userRepository.update(user);
+            return true; // Successfully updated
+        }
+        return false; // User not found
+    }
+
+    // Get user by username
+    public User getUserByUsername(String username) {
+        return userRepository.findByUsername(username)
+                .orElse(null); // Return null if user not found
     }
 }
-

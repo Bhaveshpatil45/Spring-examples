@@ -1,4 +1,9 @@
-com\spring\personalFinance\controller\LoginController.class
-com\spring\personalFinance\controller\RegisterController.class
-com\spring\personalFinance\FinanceManagementApplication.class
+com\spring\personalFinance\repositories\TransactionController.class
 com\spring\personalFinance\models\User.class
+com\spring\personalFinance\services\UserService.class
+com\spring\personalFinance\controllers\UserController.class
+com\spring\personalFinance\PersonalFinanceApplication.class
+com\spring\personalFinance\services\TransactionService.class
+com\spring\personalFinance\models\Transaction.class
+com\spring\personalFinance\controllers\TransactionController.class
+com\spring\personalFinance\repositories\UserRepository.class
