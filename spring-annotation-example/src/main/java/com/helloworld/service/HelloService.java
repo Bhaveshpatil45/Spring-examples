@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 @Setter
 @Service
 public class HelloService {
+
     @Autowired
     private HelloRepository helloRepository;
 
